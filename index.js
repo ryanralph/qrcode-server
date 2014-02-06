@@ -11,7 +11,10 @@ app.use(express.logger());
 var port = 80;
 
 app.get('/:id', function (req, res) {
-	res.render('index', { qrtext: req.params.id } );
+	if(req.params.id) 
+		res.render('index', { qrtext: req.params.id } );
+	else 
+		res.send('Enter something to be converted into a QR code, http://qr.ryanralph.net/[put something here]')
 });
 
 app.listen(port);
