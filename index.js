@@ -9,12 +9,11 @@ app.use(express.bodyParser());
 app.use(express.logger());
 
 var port = 80;
-
+app.get('/', function (req, res) {
+	res.send('Enter something to be converted into a QR code, http://qr.ryanralph.net/[put something here]');
+}
 app.get('/:id', function (req, res) {
-	if(req.params.id) 
-		res.render('index', { qrtext: req.params.id } );
-	else 
-		res.send('Enter something to be converted into a QR code, http://qr.ryanralph.net/[put something here]')
+	res.render('index', { qrtext: req.params.id } );
 });
 
 app.listen(port);
