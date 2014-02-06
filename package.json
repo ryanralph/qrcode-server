@@ -1,0 +1,10 @@
+{
+  "name": "QR-CodeServer",
+  "description": "Simple server that generates QR codes based upon URL parameters",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+  	"express": "3.x",
+	"ejs": "latest"
+  }
+}
